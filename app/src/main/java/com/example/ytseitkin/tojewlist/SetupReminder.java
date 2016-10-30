@@ -84,6 +84,8 @@ public class SetupReminder extends AppCompatActivity {
                 calendar.add(Calendar.YEAR, year);
 
                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 1000*60*60*24 , pendingIntent);
+
+                that.finish();
             }
         });
 
