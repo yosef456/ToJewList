@@ -26,7 +26,22 @@
         <activity
             android:name=".Occasions"
             android:label="@string/title_activity_occasions"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ToDoList"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <service
+            android:name=".CreateReminder"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".SetupReminder" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>

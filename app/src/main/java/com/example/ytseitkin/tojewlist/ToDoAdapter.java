@@ -30,9 +30,9 @@ public class ToDoAdapter extends ArrayAdapter<ToDoItem> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.todoitem, parent, false);
 
-        TextView item = (TextView) rowView.findViewById(R.id.item);
+        TextView item = (TextView) rowView.findViewById(R.id.item1);
 
-        item.setText("-" + values.get(position).getText());
+        item.setText(values.get(position).getDetails());
 
         return rowView;
     }

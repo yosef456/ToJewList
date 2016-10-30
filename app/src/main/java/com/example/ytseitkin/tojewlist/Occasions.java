@@ -13,7 +13,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -33,10 +36,10 @@ import java.util.ArrayList;
 
 public class Occasions extends AppCompatActivity {
 
-    private ProgressBar mProgressView;
+   // private ProgressBar mProgressView;
     private View occasionsView;
     private OccasionsAdapter ada;
-    private ArrayList occ;
+    private ArrayList<Occasion> occ;
     private ListView list;
 
     private Activity that = this;
@@ -46,17 +49,35 @@ public class Occasions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_occasions);
 
-        mProgressView = (ProgressBar) findViewById(R.id.progress);
+        //mProgressView = (ProgressBar) findViewById(R.id.progress);
 
         occasionsView =  findViewById(R.id.occasionsView);
 
-        occ = new ArrayList();
+        occ = new ArrayList<>();
 
         ada = new OccasionsAdapter(this,occ);
 
         list = (ListView) findViewById(R.id.occList);
 
         list.setAdapter(ada);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Occasion o = occ.get(i);
+
+                Intent intent = new Intent(that,ToDoList.class);
+
+                intent.putExtra("name",o.getName());
+
+                intent.putExtra("id",getIntent().getExtras().getInt("id"));
+
+                intent.putExtra("occ_id",o.getId());
+
+                startActivity(intent);
+            }
+        });
 
         showProgress(true);
 
@@ -82,27 +103,23 @@ public class Occasions extends AppCompatActivity {
                 }
             });
 
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mProgressView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-                }
-            });
+           // mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+//           // mProgressView.animate().setDuration(shortAnimTime).alpha(
+//                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+//                @Override
+//                public void onAnimationEnd(Animator animation) {
+//             //       mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+//                }
+//            });
         } else {
             // The ViewPropertyAnimator APIs are not available, so simply show
             // and hide the relevant UI components.
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            //mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             occasionsView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
     public class getOccasions extends AsyncTask<Void, Void, Boolean> {
 
         getOccasions() {
@@ -170,7 +187,6 @@ public class Occasions extends AppCompatActivity {
             showProgress(false);
 
             if (success) {
-
                 ada.notifyDataSetChanged();
 
             } else {

@@ -30,9 +30,10 @@ public class OccasionsAdapter extends ArrayAdapter<Occasion> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.todoitem, parent, false);
 
-        TextView item = (TextView) rowView.findViewById(R.id.item);
+        TextView item = (TextView) rowView.findViewById(R.id.item1);
 
-        item.setText("-" + values.get(position).getName());
+        if(item!=null)
+            item.setText(values.get(position).getName());
 
         return rowView;
     }

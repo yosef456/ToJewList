@@ -11,19 +11,20 @@
     tools:context="com.example.ytseitkin.tojewlist.register">
 
     <ScrollView
-        android:id="@+id/login_form"
+        android:id="@+id/register_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="false">
 
         <!-- Login progress -->
-        <ProgressBar
-            android:id="@+id/login_progress"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:visibility="gone"
-            android:indeterminate="false" />
+        <!--<ProgressBar-->
+            <!--android:id="@+id/login_progress"-->
+            <!--style="?android:attr/progressBarStyleLarge"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:visibility="gone"-->
+            <!--android:indeterminate="false" />-->
 
         <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical">
@@ -57,7 +58,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1" android:singleLine="true" />
 
-            <Button android:id="@+id/email_register_button" style="?android:textAppearanceSmall"
+            <Button android:id="@+id/register_user_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" android:text="Register"
                 android:textStyle="bold" />

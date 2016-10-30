@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ytseitkin.tojewlist.SetupReminder"
+    android:orientation="vertical"
+    android:id="@+id/alarm">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:id="@+id/date"
+        android:text="Select Date" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:text="SET DATE"
+        android:id="@+id/setDate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:text="Select Time"
+        android:id="@+id/timeText"
+        android:layout_gravity="center_vertical" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:text="Set Time"
+        android:id="@+id/setTime"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Reminder for: "
+        android:id="@+id/details" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Alarm"
+        android:id="@+id/createAlarm"
+        android:layout_weight="0.25" />
+
+</LinearLayout>

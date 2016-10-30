@@ -8,10 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin" tools:context=".LoginActivity"
     android:id="@+id/occasionsView">
 
-    <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" android:visibility="gone"
-        android:indeterminate="false" />
+    <!--<ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleLarge"-->
+        <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp" android:visibility="gone"-->
+        <!--android:indeterminate="false" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +31,8 @@
         android:id="@+id/occList"
         android:layout_gravity="center_horizontal"
         android:transcriptMode="alwaysScroll"
-        android:stackFromBottom="false"/>
+        android:stackFromBottom="false"
+        android:clickable="true"/>
 
 
 </LinearLayout>
